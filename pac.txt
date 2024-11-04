@@ -1,0 +1,11 @@
+function FindProxyForURL(url, host) {
+    // 定义允许的域名及其对应的 IP 和端口
+    if (shExpMatch(host, "ribon.kuon.pw")) {
+        return "PROXY 192.168.110.169:8069";
+    } 
+    if (shExpMatch(host, "kotori.kuon.pw")) {
+        return "PROXY 192.168.110.168:8069";
+    }
+    // 其他任何地址禁止访问
+    return "PROXY 0.0.0.0:0"; // 这里可以用一个无效的代理地址
+}
